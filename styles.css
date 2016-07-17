@@ -1,0 +1,22 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+#walk {
+	border-style: solid;
+	border-color: #000000;
+	border-width: 2px;
+	width 600px;
+	height: 500px;
+	
+}
+
+.main {
+	margin: auto;
+	width: 100%;
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+}
