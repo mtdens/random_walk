@@ -4,6 +4,7 @@ var con = can.getContext("2d");
 
 var particle_colors = ["red", "blue", "green", "orange", "purple", "black", "yellow", "grey"];
 var particle_list = [];
+var movement = [[1,0], [0,1], [-1,0],[0,-1]]
 
 //Particle
 function Particle() {
@@ -16,7 +17,12 @@ function Particle() {
 		return radius;
 	};
 	
-	this.get_color = function(){
+	this.get_color = function() {
 		return color;
+	};
+	
+	this.update_position = function(move) {
+		this.x += move[0];
+		this.y += move[1];
 	};
 }
