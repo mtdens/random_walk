@@ -1,8 +1,10 @@
 body {
 	font-family: 'Open Sans', sans-serif;
+	background-color: #DCDCDC;
 }
 
 #walk {
+	background-color: #FFFFFF;
 	border-style: solid;
 	border-color: #000000;
 	border-width: 2px;

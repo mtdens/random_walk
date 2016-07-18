@@ -11,7 +11,7 @@ function Particle() {
 	this.x = can.width/2;
 	this.y = can.height/2;
 	var radius = 4;
-	var color = particle_colors[Math.floor(Math.random()*particle_colors.length-1)];
+	var color = particle_colors[Math.floor(Math.random()*particle_colors.length)];
 	
 	this.get_radius = function() {
 		return radius;
@@ -25,4 +25,17 @@ function Particle() {
 		this.x += move[0];
 		this.y += move[1];
 	};
+	
+	this.draw_particle = function() {
+		con.beginPath();
+		con.arc(this.x, this.y, this.get_radius(), 0, 2*Math.PI);
+		con.fillStyle = this.get_color();
+		con.fill();
+		con.lineWidth = 2;
+		con.strokeStyle = 'black';
+		con.stroke();
+	};
 }
+
+
+
