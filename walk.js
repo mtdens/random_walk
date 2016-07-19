@@ -2,9 +2,9 @@
 var can = document.getElementById("walk");
 var con = can.getContext("2d");
 
-var particle_colors = ["red", "blue", "green", "orange", "purple", "black", "yellow", "grey"];
+var particle_colors = ["red", "blue", "green", "orange", "purple", "black", "yellow", "grey", "pink", "brown", "aqua", "maroon"];
 var particle_list = [];
-var movement = [[1,0], [0,1], [-1,0],[0,-1]]
+var movement = [[3,0], [0,3], [-3,0],[0,-3], [3,3], [3,-3], [-3,3], [-3,-3]];
 
 //Particle
 function Particle() {
@@ -37,5 +37,6 @@ function Particle() {
 	};
 }
 
-
-
+for(var i=0; i < 100; i++){
+	particle_list.push(new Particle());
+}
