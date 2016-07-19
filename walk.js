@@ -37,6 +37,24 @@ function Particle() {
 	};
 }
 
-for(var i=0; i < 100; i++){
+for(var i=0; i < 1; i++){
 	particle_list.push(new Particle());
+}
+
+var time = setInterval(particle_flow, 100);
+var time_count = 0;
+
+function particle_flow() {
+	time_count += 1;
+	con.clearRect(0, 0, can.width, can.height);
+	
+	for(var j= 0; j < particle_list.length; j++){
+		particle_list[j].update_position(movement[Math.floor(Math.random()*movement.length)]);
+		particle_list[j].draw_particle();
+	}	
+	
+	console.log(time_count);
+	if (time_count == 300){
+		clearInterval(time);
+	}
 }
