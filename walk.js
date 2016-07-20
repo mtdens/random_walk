@@ -4,7 +4,13 @@ var con = can.getContext("2d");
 
 var particle_colors = ["red", "blue", "green", "orange", "purple", "black", "yellow", "grey", "pink", "brown", "aqua", "maroon"];
 var particle_list = [];
-var movement = [[3,0], [0,3], [-3,0],[0,-3], [3,3], [3,-3], [-3,3], [-3,-3]];
+var rate = 3;
+var movement = function() {
+	var x = rate*Math.cos(2*Math.PI*Math.random());
+	var y = rate*Math.sin(2*Math.PI*Math.random());
+	
+	return [x,y];
+};
 
 //Particle
 function Particle() {
@@ -37,7 +43,7 @@ function Particle() {
 	};
 }
 
-for(var i=0; i < 1; i++){
+for(var i=0; i < 100; i++){
 	particle_list.push(new Particle());
 }
 
@@ -49,7 +55,7 @@ function particle_flow() {
 	con.clearRect(0, 0, can.width, can.height);
 	
 	for(var j= 0; j < particle_list.length; j++){
-		particle_list[j].update_position(movement[Math.floor(Math.random()*movement.length)]);
+		particle_list[j].update_position(movement());
 		particle_list[j].draw_particle();
 	}	
 	
