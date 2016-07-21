@@ -16,8 +16,16 @@ body {
 	margin: auto;
 	width: 100%;
 	text-align: center;
+	display: block;
 }
 
 h1 {
 	text-align: center;
+}
+
+#num {
+	font-size: 26px;
+	text-align: center;
+	display: block;
+	padding: 10px;
 }

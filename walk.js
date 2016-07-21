@@ -2,7 +2,7 @@
 var can = document.getElementById("walk");
 var con = can.getContext("2d");
 
-var particle_colors = ["red", "blue", "green", "orange", "purple", "black", "yellow", "grey", "pink", "brown", "aqua", "maroon"];
+var particle_colors = ["red", "blue", "green", "orange", "purple", "yellow", "grey", "pink", "brown", "aqua", "maroon", "lime", "salmon", "magenta"];
 var particle_list = [];
 var rate = 3;
 var movement = function() {
@@ -59,8 +59,13 @@ function particle_flow() {
 		particle_list[j].draw_particle();
 	}	
 	
-	console.log(time_count);
+	
 	if (time_count == 300){
 		clearInterval(time);
 	}
 }
+
+window.onload = function() {
+	var text = "Number of Particles: " + particle_list.length;
+	document.getElementById("num").innerHTML = text;
+};
