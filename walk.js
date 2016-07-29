@@ -41,9 +41,10 @@ function Particle() {
 		con.strokeStyle = 'black';
 		con.stroke();
 	};
+	
 }
 
-for(var i=0; i < 100; i++){
+for(var i= 0; i < 100; i++){
 	particle_list.push(new Particle());
 }
 
@@ -57,15 +58,15 @@ function particle_flow() {
 	for(var j= 0; j < particle_list.length; j++){
 		particle_list[j].update_position(movement());
 		particle_list[j].draw_particle();
-	}	
+	}		
 	
-	
+	//Time counter
 	if (time_count == 300){
 		clearInterval(time);
 	}
 }
 
-window.onload = function() {
-	var text = "Number of Particles: " + particle_list.length;
-	document.getElementById("num").innerHTML = text;
+
+window.onload = function() {//	
+	document.getElementById("num_p").innerHTML = particle_list.length;
 };
