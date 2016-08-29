@@ -5,12 +5,6 @@ var con = can.getContext("2d");
 var particle_colors = ["red", "blue", "green", "orange", "purple", "yellow", "grey", "pink", "brown", "aqua", "maroon", "lime", "salmon", "magenta"];
 var particle_list = [];
 var rate = 3;
-var movement = function() {
-	var x = rate*Math.cos(2*Math.PI*Math.random());
-	var y = rate*Math.sin(2*Math.PI*Math.random());
-	
-	return [x,y];
-};
 
 //Particle
 function Particle() {
@@ -25,6 +19,13 @@ function Particle() {
 	
 	this.get_color = function() {
 		return color;
+	};
+	
+	this.movement = function() {
+		var x = rate*Math.cos(2*Math.PI*Math.random());
+		var y = rate*Math.sin(2*Math.PI*Math.random());
+	
+		return [x,y];
 	};
 	
 	this.update_position = function(move) {
@@ -56,7 +57,7 @@ function particle_flow() {
 	con.clearRect(0, 0, can.width, can.height);
 	
 	for(var j= 0; j < particle_list.length; j++){
-		particle_list[j].update_position(movement());
+		particle_list[j].update_position(particle_list[j].movement());
 		particle_list[j].draw_particle();
 	}		
 	
