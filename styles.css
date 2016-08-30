@@ -46,3 +46,51 @@ h1 {
 	width: 30px;
 	margin-left: 15px;
 }
+
+/* Buttons */
+.buttons-container {
+	width: 600px;
+	margin: 25px auto;
+}
+
+.button-format {
+	display: inline-block;
+	text-align: center;
+	width: 50%;
+}
+
+.button {
+  background-color: #FFFFFF;
+  color: #000000;
+  text-align: center;
+  text-decoration: none;
+	width: 100px;
+	padding: 16px;
+	border-radius: 3px;
+  font-size: 18px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.start-walk {
+	border-width: 2px;
+	border-style: solid;
+	border-color: green;
+}
+
+.start-walk:hover {
+	color: #FFFFFF;
+	background-color: green;
+}
+
+.stop-walk {
+	border-width: 2px;
+	border-style: solid;
+	border-color: red;
+}
+
+.stop-walk:hover {
+	color: #FFFFFF;
+	background-color: red;
+}
