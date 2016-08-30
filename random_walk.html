@@ -8,6 +8,11 @@
 	
 	<!--CSS -->
 	<link href="styles.css" rel="stylesheet">
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/base/jquery-ui.css" rel="stylesheet">
+	
+	<!--JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
 	
 	<title>
 		Random Walk
@@ -19,12 +24,28 @@
 	<h1>A Random Walk</h1>
 	<div class="main">
 		
-		<canvas id="walk" width="600px" height="500px">
-			<script src="walk.js"></script>
+		<canvas id="walk" width="600px" height="500px">			
 		</canvas>	
 	</div>
+	
+	<!-- Number of Particles Status -->
 	<div id="num">
-		Number of Particles: <span id="num_p"></span>
+		Number of Particles:<span id="num_p"></span>
 	</div>
+	<div id="slider"></div>
+	
+	<!-- Energy Status -->
+	<div id="num">
+		Energy Level: <span id="num_e"></span>
+	</div>
+	<div id="slider2"></div>
+	
+	<!-- Time Count Status -->
+	<div id="num">
+		Time Length (s): <span id="num_t"></span>
+	</div>
+	<div id="slider3"></div>
+	
+	<script src="walk.js"></script>
 </body>	
 </html>

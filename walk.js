@@ -5,6 +5,7 @@ var con = can.getContext("2d");
 var particle_colors = ["red", "blue", "green", "orange", "purple", "yellow", "grey", "pink", "brown", "aqua", "maroon", "lime", "salmon", "magenta"];
 var particle_list = [];
 var rate = 3;
+var walk_status = false;
 
 //Particle
 function Particle() {
@@ -45,6 +46,45 @@ function Particle() {
 	
 }
 
+//Slider Code
+$(document).ready( function() {
+	
+		//Number of Particles
+    $("#slider").slider({
+			max: 200,
+			min: 1,
+			slide: function(event, ui) {				
+				if(!walk_status){
+        	$("#num_p").html(ui.value);
+				}
+    } 
+		});
+	
+		//Energy Level
+		$("#slider2").slider({
+			max: 10,
+			min: 1,
+			step: 0.1,
+			slide: function(event, ui) { 
+				if(!walk_status){
+           $("#num_e").html(ui.value);
+				}
+    } 
+		});
+	
+		//Time Count
+		$("#slider3").slider({
+			max: 180,
+			min: 1,
+			slide: function(event, ui) {
+				if(!walk_status){
+            $("#num_t").html(ui.value);
+				}
+    } 
+		});	
+  }	
+);
+
 for(var i= 0; i < 100; i++){
 	particle_list.push(new Particle());
 }
@@ -66,8 +106,3 @@ function particle_flow() {
 		clearInterval(time);
 	}
 }
-
-
-window.onload = function() {//	
-	document.getElementById("num_p").innerHTML = particle_list.length;
-};

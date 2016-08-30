@@ -1,6 +1,7 @@
 body {
 	font-family: 'Open Sans', sans-serif;
 	background-color: #DCDCDC;
+	box-sizing: border-box;
 }
 
 #walk {
@@ -28,4 +29,14 @@ h1 {
 	text-align: center;
 	display: block;
 	padding: 10px;
+}
+
+#slider, #slider2, #slider3 {
+	margin: auto;
+	display: block;
+	width: 570px;
+}
+
+#num_p, #num_e, #num_t {
+	margin-left: 5px;
 }
