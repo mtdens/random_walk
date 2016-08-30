@@ -95,8 +95,9 @@ function particle_flow() {
 	}		
 	
 	//Time counter
-	if (time_count == 300){
+	if (time_count == time_limit){
 		clearInterval(time);
+		walk_status = false;
 	}
 }
 
