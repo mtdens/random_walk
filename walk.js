@@ -3,8 +3,8 @@ var can = document.getElementById("walk");
 var con = can.getContext("2d");
 
 var particle_colors = ["red", "blue", "green", "orange", "purple", "yellow", "grey", "pink", "brown", "aqua", "maroon", "lime", "salmon", "magenta"];
-var particle_list = [];
-var rate = 3;
+
+//False if not running, True if running
 var walk_status = false;
 
 //Particle
@@ -85,13 +85,6 @@ $(document).ready( function() {
   }	
 );
 
-for(var i= 0; i < 100; i++){
-	particle_list.push(new Particle());
-}
-
-var time = setInterval(particle_flow, 100);
-var time_count = 0;
-
 function particle_flow() {
 	time_count += 1;
 	con.clearRect(0, 0, can.width, can.height);
@@ -105,4 +98,33 @@ function particle_flow() {
 	if (time_count == 300){
 		clearInterval(time);
 	}
+}
+
+function start_walk(){
+	
+	if(!walk_status){ //Executes if isn't running
+		particle_list = [];
+		time_count = 0;
+		num_p = Number(document.getElementById("num_p").innerHTML);
+		rate = Number(document.getElementById("num_e").innerHTML);
+		time_limit = 10*Number(document.getElementById("num_t").innerHTML);
+	
+		for(var i= 0; i < num_p; i++){
+			particle_list.push(new Particle());
+		}
+	
+		//Input required for all three parameters
+		if(num_p == 0 || rate == 0 || time_limit == 0){
+			walk_status = false;
+		}
+		else{
+			time = setInterval(particle_flow, 100);
+			walk_status = true;
+		}
+	}	
+}
+
+function stop_walk(){
+	clearInterval(time);
+	walk_status = false;
 }
