@@ -24,7 +24,7 @@ h1 {
 	text-align: center;
 }
 
-#num {
+.num {
 	font-size: 26px;
 	text-align: center;
 	display: block;
@@ -37,7 +37,7 @@ h1 {
 	width: 570px;
 }
 
-#label {
+.label {
 	display: inline-block;
 }
 
@@ -68,7 +68,6 @@ h1 {
 	padding: 16px;
 	border-radius: 3px;
   font-size: 18px;
-  -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   cursor: pointer;
 }
